@@ -1,0 +1,95 @@
+{ pkgs, ... }:
+
+{
+  # Python packages
+  home.packages = with pkgs;[
+    python3Full
+    imath
+    pystring
+    pyright
+    nodejs_22
+    mypy
+    ruff
+    black
+    python312Packages.ply
+    python311Packages.ply
+
+    python311Packages.pyautogui
+    python311Packages.pygame
+    python311Packages.pygame-gui
+
+    python3Packages.cffi
+    python3Packages.dbus-python
+    python3Packages.wheel
+    python3Packages.pyyaml
+    python3Packages.zipp
+    python3Packages.xlib
+    python3Packages.libvirt
+    python3Packages.pybind11
+    python3Packages.pyatspi
+    python3Packages.attrs
+    python3Packages.autocommand
+    python3Packages.bcrypt
+    python3Packages.pycairo
+    python3Packages.certifi
+    python3Packages.chardet
+    python3Packages.click
+    python3Packages.cryptography
+    python3Packages.cssselect
+    python3Packages.python-dateutil
+    python3Packages.distro
+    python3Packages.dnspython
+    python3Packages.evdev
+    python3Packages.ewmh
+    python3Packages.fastjsonschema
+    python3Packages.fido2
+    python3Packages.python-gnupg
+    python3Packages.pygobject3
+    python3Packages.idna
+    python3Packages.importlib-metadata
+    python3Packages.inflect
+    python3Packages.isodate
+    python3Packages.jeepney
+    python3Packages.keyring
+    python3Packages.lxml
+    python3Packages.markdown
+    python3Packages.markupsafe
+    python3Packages.more-itertools
+    python3Packages.numpy
+    python3Packages.ordered-set
+    python3Packages.packaging
+    python3Packages.pillow
+    python3Packages.pip
+    python3Packages.platformdirs
+    python3Packages.ply
+    python3Packages.prettytable
+    python3Packages.proton-client
+    python3Packages.protonvpn-nm-lib
+    python3Packages.psutil
+    python3Packages.pulsectl
+    python3Packages.pycparser
+    python3Packages.pycups
+    python3Packages.pycurl
+    python3Packages.pydantic
+    python3Packages.pyinotify
+    python3Packages.pyopenssl
+    python3Packages.pyparsing
+    python3Packages.pyqt5
+    python3Packages.pyqt5_sip
+    python3Packages.pyscard
+    python3Packages.pythondialog
+    python3Packages.pyxdg
+    python3Packages.rdflib
+    python3Packages.requests
+    python3Packages.secretstorage
+    python3Packages.setproctitle
+    python3Packages.setuptools
+    python3Packages.six
+    python3Packages.systemd
+    python3Packages.tomli
+    python3Packages.urllib3
+    python3Packages.wcwidth
+    python3Packages.websockets
+    python3Packages.python-zbar
+  ];
+}
