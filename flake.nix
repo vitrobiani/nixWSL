@@ -7,13 +7,14 @@
       systemSettings = {
         system = "x86_64-linux"; # system arch
         hostname = "nixos"; # hostname
-        profile = "c-profile"; # select a profile defined from my profiles directory
+        profile = "rust-profile"; # profileID
         timezone = "Asia/Jerusalem"; # select timezone
         locale = "en_US.UTF-8"; # select locale
       };
 
       # ----- USER SETTINGS ----- #
       userSettings = rec {
+        profile = systemSettings.profile;
         username = "nixos"; # username
         name = "vitrobiani"; # name/identifier
         email = "vitrobiani@gmail.com"; # email (used for certain configurations)

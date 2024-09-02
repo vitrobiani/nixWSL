@@ -74,4 +74,6 @@ require("lspconfig").clangd.setup {
 
 require("lspconfig").nixd.setup {}
 
+require("lspconfig").bashls.setup{}
+
 return M

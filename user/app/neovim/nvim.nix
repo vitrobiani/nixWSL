@@ -4,7 +4,7 @@
 	home.file = {
 		".config/nvim" = {
 			enable = true;
-			source = ./nvim;
+			source = ./general_nvim;
 			recursive = true;
 		};
 	};

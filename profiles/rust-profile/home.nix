@@ -13,33 +13,15 @@
               ../../user/generalSettings/imports.nix
               ../../user/generalSettings/envVars.nix
 
-              ../../user/app/neovim/webdev_nvim.nix # My neovim config
-              ../../user/lang/wevdev.nix
+              ../../user/app/neovim/nvim.nix # My neovim config
             ];
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
-home.enableNixpkgsReleaseCheck = false;
+
+  home.enableNixpkgsReleaseCheck = false;
+
   home.packages = (with pkgs; [
 
-    # Core
-    zsh
-    alacritty
-    git
-    ranger
-    syncthing
-    xclip
-    lua
-    lua-language-server
-
-    # Various dev packages
-    nil
-    nixd
-    statix
-    zellij
-    texinfo
-    libffi zlib
-    nodePackages.ungit
-    ventoy
   ]); 
 
   services.syncthing.enable = true;

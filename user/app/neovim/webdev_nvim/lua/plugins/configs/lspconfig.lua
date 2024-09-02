@@ -74,6 +74,8 @@ require("lspconfig").clangd.setup {
 
 require("lspconfig").nixd.setup {}
 
-require'lspconfig'.ast_grep.setup{}
+require("lspconfig").bashls.setup {}
+
+require("lspconfig").ast_grep.setup{}
 
 return M

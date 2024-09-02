@@ -9,36 +9,19 @@
   programs.home-manager.enable = true;
 
   imports = [
-              ../../user/shell/sh.nix # My zsh and bash config
-              ../../user/shell/cli-collection.nix # Useful CLI apps
+              ../../user/generalSettings/pkgs.nix
+              ../../user/generalSettings/imports.nix
+              ../../user/generalSettings/envVars.nix
+
               ../../user/app/neovim/nvim.nix # My neovim config
-              #../../user/app/ranger/ranger.nix # My ranger file manager config
-              ../../user/app/git/git.nix # My git config
-              #../../user/lang/cc/cc.nix # C and C++ tools
-              #../../user/lang/python/python-packages.nix
             ];
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
-home.enableNixpkgsReleaseCheck = false;
+
+  home.enableNixpkgsReleaseCheck = false;
+
   home.packages = (with pkgs; [
-    hello
-    # Core
-    zsh
-    alacritty
-    git
-    ranger
-    syncthing
 
-
-    # Various dev packages
-    nil
-    nixd
-    statix
-    zellij
-    texinfo
-    libffi zlib
-    nodePackages.ungit
-    ventoy
   ]); 
 
   services.syncthing.enable = true;

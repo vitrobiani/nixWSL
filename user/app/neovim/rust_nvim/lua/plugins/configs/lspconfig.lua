@@ -74,45 +74,6 @@ require("lspconfig").clangd.setup {
 
 require("lspconfig").nixd.setup {}
 
-require'lspconfig'.bashls.setup{}
-
-local dap = require('dap')
-
--- LLDB configuration
- dap.adapters.lldb = {
-     type = 'executable',
-     command = '/home/nixos/.nix-profile/bin/lldb-dap', -- Adjust this path if needed
-     name = "lldb"
- }
-
- dap.configurations.cpp = {
-     {
-         name = "Launch",
-         type = "lldb",
-         request = "launch",
-         program = function()
-             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/')
-         end,
-         cwd = '${workspaceFolder}',
-         stopOnEntry = false,
-         args = {},
-         runInTerminal = false,
-     },
- }
-
- -- Same configuration for C
- dap.configurations.c = dap.configurations.cpp
-
--- Setup dap-ui to auto-open and close with debugging sessions
-require("dapui").setup()
-dap.listeners.after.event_initialized["dapui_config"] = function()
-    require("dapui").open()
-end
-dap.listeners.before.event_terminated["dapui_config"] = function()
-    require("dapui").close()
-end
-dap.listeners.before.event_exited["dapui_config"] = function()
-    require("dapui").close()
-end
+require("lspconfig").bashls.setup{}
 
 return M
