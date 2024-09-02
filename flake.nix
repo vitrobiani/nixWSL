@@ -7,7 +7,7 @@
       systemSettings = {
         system = "x86_64-linux"; # system arch
         hostname = "nixos"; # hostname
-        profile = "webdev-profile"; # select a profile defined from my profiles directory
+        profile = "c-profile"; # select a profile defined from my profiles directory
         timezone = "Asia/Jerusalem"; # select timezone
         locale = "en_US.UTF-8"; # select locale
       };
