@@ -1,4 +1,9 @@
 { config, pkgs, userSettings, ... }:
+let
+  myAliases = {
+    cmf = "sudo sh ~/.HomeFlake/user/lang/cmf.sh";
+  };
+in 
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -27,6 +32,32 @@
 
   services.syncthing.enable = true;
 
+  home.file ={
+    "Makefiles" = {
+      enable = true;
+      source = ../../user/lang/Makefiles;
+      recursive = true;
+    };
+
+    ".clang-format".text = "
+      BasedOnStyle: LLVM
+      IndentWidth: 4";
+  };
+
+  programs.zsh = {
+    enable = true;
+    shellAliases = myAliases;
+  };
+
+  programs.bash = {
+    enable = true;
+    shellAliases = myAliases;
+  };
+
+  programs.fish = {
+    enable = true;
+    shellAliases = myAliases;
+  };
 
   home.sessionVariables = {
     EDITOR = userSettings.editor;

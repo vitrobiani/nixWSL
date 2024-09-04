@@ -76,6 +76,8 @@ require("lspconfig").nixd.setup {}
 
 require("lspconfig").bashls.setup {}
 
+require'lspconfig'.marksman.setup{}
+
 require("lspconfig").ast_grep.setup{}
 
 return M

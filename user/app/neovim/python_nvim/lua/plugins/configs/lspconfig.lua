@@ -68,6 +68,8 @@ require("lspconfig").nixd.setup {}
 
 require("lspconfig").bashls.setup {}
 
+require'lspconfig'.marksman.setup{}
+
 require("lspconfig").pyright.setup{
   on_attach = M.on_attach,
   capabilities = M.capabilities,

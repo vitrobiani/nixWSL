@@ -76,4 +76,23 @@ require("lspconfig").nixd.setup {}
 
 require("lspconfig").bashls.setup{}
 
+require'lspconfig'.marksman.setup{}
+
+local lspconfig = require("lspconfig")
+local util = require "lspconfig/util"
+require("lspconfig").rust_analyzer.setup {
+  on_init = M.on_init,
+  on_attach = M.on_attach,
+  capabilities = M.capabilities,
+  root_dir = util.root_pattern("Cargo.toml"),
+  filetypes = {"rust"},
+  settings = {
+    ['rust_analyzer']= {
+      cargo = {
+        allFeatures = true,
+      },
+    },
+  },
+}
+
 return M

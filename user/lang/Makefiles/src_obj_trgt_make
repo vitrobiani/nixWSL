@@ -1,0 +1,41 @@
+
+# creates an obj, src and target directory and compiles to the target dir
+
+SRC_DIR := src
+OBJ_DIR := objects
+TARGET_DIR := target
+
+# Compiler and flags
+CC := gcc
+CFLAGS := -Wall -Wextra -I$(SRC_DIR)
+
+# Executable name
+TARGET := $(TARGET_DIR)/prog
+
+# Find all .c and .h files
+C_SOURCES := $(wildcard *.c)
+H_SOURCES := $(wildcard *.h)
+OBJECTS := $(patsubst %.c,$(OBJ_DIR)/%.o,$(C_SOURCES))
+
+# Default target
+all: setup $(TARGET)
+
+# Setup directories and move source files
+setup:
+	@mkdir -p $(SRC_DIR) $(OBJ_DIR) $(TARGET_DIR)
+	@mv -f $(C_SOURCES) $(H_SOURCES) $(SRC_DIR) 2>/dev/null || true
+
+# Compile .c files to .o files
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Link .o files to create the executable
+$(TARGET): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $(TARGET)
+
+# Clean up build files
+clean:
+	rm -rf $(OBJ_DIR) $(TARGET_DIR)
+
+# Phony targets
+.PHONY: all clean setup

@@ -9,7 +9,7 @@ let
     m = "pwd|>~/.config/loc.txt";
     tp = "cd $(cat ~/.config/loc.txt)";
     flakeconf = "nv ~/.HomeFlake/flake.nix";
-    nvconf = "X=$(pwd) && cd ~/.HomeFlake/user/app/neovim/$PROFILE_nvim/ && nv . && cd $X";
+    nvconf = "X=$(pwd) && cd ~/.HomeFlake/user/app/neovim/$\{PROFILE%%-*\}_nvim/ && nv . && cd $X";
     nixconf = "sudo nvim /etc/nixos/configuration.nix";
     update = "X=$(pwd) && cd ~/.HomeFlake && git add -A && home-manager switch --flake ~/.HomeFlake && cd $X";
     addProf = "X=$(pwd) && cd ~/.HomeFlake && ./addProfile.sh && cd $X";

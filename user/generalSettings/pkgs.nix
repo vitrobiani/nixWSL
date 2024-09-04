@@ -10,14 +10,9 @@
     ranger
     xclip
     syncthing
-    lua
-    lua-language-server
 
 
     # Various dev packages
-    nil
-    nixd
-    statix
     zellij
     texinfo
     libffi zlib

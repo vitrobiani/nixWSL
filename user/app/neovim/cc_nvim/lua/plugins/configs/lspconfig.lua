@@ -76,6 +76,8 @@ require("lspconfig").nixd.setup {}
 
 require'lspconfig'.bashls.setup{}
 
+require'lspconfig'.marksman.setup{}
+
 local dap = require('dap')
 
 -- LLDB configuration

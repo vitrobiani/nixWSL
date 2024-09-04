@@ -1,4 +1,4 @@
-{ config, pkgs, pkgs-kdenlive, userSettings, ... }:
+{ config, pkgs, userSettings, ... }:
 
 {
   # Home Manager needs a bit of information about you and the paths it should
@@ -13,7 +13,8 @@
               ../../user/generalSettings/imports.nix
               ../../user/generalSettings/envVars.nix
 
-              ../../user/app/neovim/nvim.nix # My neovim config
+              ../../user/app/neovim/rust_nvim.nix # My neovim config
+              ../../user/lang/rust.nix
             ];
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
@@ -25,7 +26,6 @@
   ]); 
 
   services.syncthing.enable = true;
-
 
   home.sessionVariables = {
     EDITOR = userSettings.editor;

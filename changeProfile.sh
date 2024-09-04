@@ -24,7 +24,9 @@ if [ -d "${foldername}-profile" ]; then
     # use sed to replace the line containing the identifier
     sed -i "/$identifier/c\\$new_text" "$file"
     git add -A && home-manager switch --flake ~/.HomeFlake
-    echo "'$foldername' is now the active profile" | cowsay
+    export PROFILE="${foldername}-profile"
+    echo "$PROFILE"
+    echo "'$foldername' is will be the active profile in the next session!" | cowsay
 else
     echo "'$foldername' is not a valid folder."
 fi
