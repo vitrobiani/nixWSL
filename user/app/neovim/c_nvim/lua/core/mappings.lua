@@ -18,6 +18,11 @@ M.general = {
   },
 
   n = {
+    ['<C-h>'] = { "<cmd> TmuxNavigateLeft <CR>" },
+    ['<C-l>'] = { "<cmd> TmuxNavigateRight <CR>" },
+    ['<C-j>'] = { "<cmd> TmuxNavigateDown <CR>" },
+    ['<C-k>'] = { "<cmd> TmuxNavigateUp <CR>" },
+
     ['<F5>'] = { ":lua require'dap'.continue()<CR>" },
     ['<F6>'] = { ":lua require'dapui'.toggle()<CR>" },
     ['<F10>'] = { ":lua require'dap'.step_over()<CR>" },
@@ -28,10 +33,10 @@ M.general = {
 
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
-    ["<C-h>"] = { "<C-w>h", "Window left" },
-    ["<C-l>"] = { "<C-w>l", "Window right" },
-    ["<C-j>"] = { "<C-w>j", "Window down" },
-    ["<C-k>"] = { "<C-w>k", "Window up" },
+    -- ["<C-h>"] = { "<C-w>h", "Window left" },
+    -- ["<C-l>"] = { "<C-w>l", "Window right" },
+    -- ["<C-j>"] = { "<C-w>j", "Window down" },
+    -- ["<C-k>"] = { "<C-w>k", "Window up" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },

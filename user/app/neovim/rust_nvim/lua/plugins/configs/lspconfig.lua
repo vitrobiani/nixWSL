@@ -78,21 +78,60 @@ require("lspconfig").bashls.setup{}
 
 require'lspconfig'.marksman.setup{}
 
-local lspconfig = require("lspconfig")
-local util = require "lspconfig/util"
-require("lspconfig").rust_analyzer.setup {
-  on_init = M.on_init,
-  on_attach = M.on_attach,
-  capabilities = M.capabilities,
-  root_dir = util.root_pattern("Cargo.toml"),
-  filetypes = {"rust"},
-  settings = {
-    ['rust_analyzer']= {
-      cargo = {
-        allFeatures = true,
-      },
-    },
-  },
-}
+require("neodev").setup({
+  library = { plugins = { "nvim-dap-ui" }, types = true },
+})
+
+local dap = require('dap')
+-- LLDB configuration
+ dap.adapters.lldb = {
+     type = 'executable',
+     command = '/home/nixos/.nix-profile/bin/lldb-dap', -- Adjust this path if needed
+     name = "lldb"
+ }
+
+ dap.configurations.rust = {
+     {
+         name = "Launch",
+         type = "lldb",
+         request = "launch",
+         program = function()
+             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/')
+         end,
+         cwd = '${workspaceFolder}',
+         stopOnEntry = false,
+         args = {},
+         runInTerminal = false,
+     },
+ }
+
+-- Setup dap-ui to auto-open and close with debugging sessions
+require("dapui").setup()
+dap.listeners.after.event_initialized["dapui_config"] = function()
+    require("dapui").open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+    require("dapui").close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+    require("dapui").close()
+end
+
+-- local lspconfig = require("lspconfig")
+-- local util = require "lspconfig/util"
+-- require("lspconfig").rust_analyzer.setup {
+--   on_init = M.on_init,
+--   on_attach = M.on_attach,
+--   capabilities = M.capabilities,
+--   root_dir = util.root_pattern("Cargo.toml"),
+--   filetypes = {"rust"},
+--   settings = {
+--     ['rust_analyzer']= {
+--       cargo = {
+--         allFeatures = true,
+--       },
+--     },
+--   },
+-- }
 
 return M

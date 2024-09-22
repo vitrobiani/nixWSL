@@ -18,18 +18,35 @@ M.general = {
   },
 
   n = {
+    -- ['<F5>'] = { ":lua require'dap'.continue()<CR>" },
+    ['<F6>'] = { ":lua require'dapui'.toggle()<CR>" },
+    ['<F7>'] = { "<cmd> RustDebuggables <CR>" },
+    ['<F10>'] = { ":lua require'dap'.step_over()<CR>" },
+    ['<F11>'] = { ":lua require'dap'.step_into()<CR>" },
+    ['<F12>'] = { ":lua require'dap'.step_out()<CR>" },
+    ['<leader>bp'] = { ":lua require'dap'.toggle_breakpoint()<CR>" , "Toggle breakpoint" },
+    ['<leader>dr'] = { ":lua require'dap'.repl.open()<CR>"},
+
+    ["<leader>rf"] = {"function() vim.lsp.buf.rename() end", "Refactor"},
+    ["<leader>rc"] = {"function() require('crates').upgrade_all_crates() end", "update crates"},
+    ['<C-h>'] = { "<cmd> TmuxNavigateLeft <CR>" },
+    ['<C-l>'] = { "<cmd> TmuxNavigateRight <CR>" },
+    ['<C-j>'] = { "<cmd> TmuxNavigateDown <CR>" },
+    ['<C-k>'] = { "<cmd> TmuxNavigateUp <CR>" },
+
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
-    ["<C-h>"] = { "<C-w>h", "Window left" },
-    ["<C-l>"] = { "<C-w>l", "Window right" },
-    ["<C-j>"] = { "<C-w>j", "Window down" },
-    ["<C-k>"] = { "<C-w>k", "Window up" },
+    -- ["<C-h>"] = { "<C-w>h", "Window left" },
+    -- ["<C-l>"] = { "<C-w>l", "Window right" },
+    -- ["<C-j>"] = { "<C-w>j", "Window down" },
+    -- ["<C-k>"] = { "<C-w>k", "Window up" },
 
     -- save
     ["<C-s>"] = { "<cmd> w <CR>", "Save file" },
 
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
+    ["<leader>e"] = {"<cmd>!chmod +x %<CR>"},
 
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },
@@ -65,6 +82,8 @@ M.general = {
     ["<Down>"] = { 'v:count || mode(1)[0:1] == "no" ? "j" : "gj"', "Move down", opts = { expr = true } },
     ["<"] = { "<gv", "Indent line" },
     [">"] = { ">gv", "Indent line" },
+    ["J"] = {":m '>+1<CR>gv=gv"},
+    ["K"] = {":m '<-2<CR>gv=gv"},
   },
 
   x = {
@@ -74,6 +93,18 @@ M.general = {
     -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
     ["p"] = { 'p:let @+=@0<CR>:let @"=@0<CR>', "Dont copy replaced text", opts = { silent = true } },
   },
+}
+
+M.crates = {
+  plugin = true,
+  n = {
+    ["<leader>rc"] = {
+      function ()
+        require('crates').upgrade_all_crates()
+      end,
+      "update crates"
+    }
+  }
 }
 
 M.tabufline = {
@@ -263,7 +294,7 @@ M.nvimtree = {
     ["<C-n>"] = { "<cmd> NvimTreeToggle <CR>", "Toggle nvimtree" },
 
     -- focus
-    ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
+    -- ["<leader>e"] = { "<cmd> NvimTreeFocus <CR>", "Focus nvimtree" },
   },
 }
 

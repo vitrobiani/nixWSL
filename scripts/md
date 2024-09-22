@@ -1,2 +1,10 @@
 #! /bin/sh
-mkdir -p "$1" && cd "$1"
+cur=$(pwd)
+mkdir -p "$1"
+
+if [ -d "$1" ]; then
+    path="$cur/$1/"
+    echo "$path" > ~/.config/md.txt
+    echo ""
+fi
+cd "$(cat ~/.config/md.txt)" || exit

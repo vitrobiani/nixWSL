@@ -22,7 +22,9 @@
   home.enableNixpkgsReleaseCheck = false;
 
   home.packages = (with pkgs; [
-
+    rustfmt
+    vimPlugins.rust-tools-nvim
+    lldb
   ]); 
 
   services.syncthing.enable = true;

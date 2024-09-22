@@ -11,6 +11,7 @@
     gcc
     cmake
     gnumake42
+    valgrind
   ];
 
 }
