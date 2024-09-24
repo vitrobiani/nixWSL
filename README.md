@@ -33,3 +33,4 @@ so if you want to add a script to PATH just add it there.</p>
 <br><br>
 
 > Keep in mind: this is a work in progress and is not a finished maintained product.
+> <br>please vist the <a href="https://www.vitrobiani.org/nixwsldoc/doc.html">doc</a> for more info (once it's done lol)
