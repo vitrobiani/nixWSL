@@ -7,7 +7,7 @@
       systemSettings = {
         system = "x86_64-linux"; # system arch
         hostname = "nixos"; # hostname
-        profile = "c-profile"; # profileID
+        profile = "rust-profile"; # profileID
         timezone = "Asia/Jerusalem"; # select timezone
         locale = "en_US.UTF-8"; # select locale
       };

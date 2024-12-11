@@ -25,6 +25,8 @@
     rustfmt
     vimPlugins.rust-tools-nvim
     lldb
+    cmake
+    python312Packages.torch
   ]); 
 
   services.syncthing.enable = true;

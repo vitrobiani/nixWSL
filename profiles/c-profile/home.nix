@@ -27,7 +27,13 @@ in
   home.enableNixpkgsReleaseCheck = false;
 
   home.packages = (with pkgs; [
-
+    freeglut
+    libGLU
+    libGL
+    mesa
+    mesa-demos
+    libglvnd
+    libglibutil
   ]); 
 
   services.syncthing.enable = true;

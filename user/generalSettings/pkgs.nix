@@ -18,5 +18,9 @@
     libffi zlib
     nodePackages.ungit
     ventoy
+
+    python3
+    tree-sitter
+    nodejs_22
   ]); 
 }

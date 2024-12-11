@@ -12,6 +12,10 @@
     cmake
     gnumake42
     valgrind
+    freeglut
+    mesa
+    nemiver
+    libgcc
   ];
 
 }
