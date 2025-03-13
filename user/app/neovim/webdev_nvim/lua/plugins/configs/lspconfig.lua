@@ -80,4 +80,12 @@ require'lspconfig'.marksman.setup{}
 
 require("lspconfig").ast_grep.setup{}
 
+-- require'lspconfig'.lexical.setup{}
+
+require'lspconfig'.tailwindcss.setup{}
+
+require'lspconfig'.elixirls.setup{
+    cmd = { "~/.HomeFlake/user/lang/elixir/language_server.sh" };
+}
+
 return M

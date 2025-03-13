@@ -3,6 +3,8 @@
 {
   home.packages = (with pkgs; [
     hello
+    spotify-cli-linux
+    spotify-player
     # Core
     zsh
     alacritty
@@ -14,13 +16,19 @@
 
     # Various dev packages
     zellij
+    helix
     texinfo
     libffi zlib
     nodePackages.ungit
     ventoy
 
-    python3
     tree-sitter
     nodejs_22
+    nusmv
+    glow
+
+    bison
+    flex
+    gnumake42
   ]); 
 }

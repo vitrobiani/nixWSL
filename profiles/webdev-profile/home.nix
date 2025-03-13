@@ -19,28 +19,34 @@
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
 home.enableNixpkgsReleaseCheck = false;
-  home.packages = (with pkgs; [
+home.packages = (with pkgs; [
+    elixir
+    elixir-ls
+    lexical
+    tailwindcss
+    tailwindcss-language-server
+    erlang
 
-    # Core
-    zsh
-    alacritty
-    git
-    ranger
-    syncthing
-    xclip
-    lua
-    lua-language-server
-
-    # Various dev packages
-    nil
-    nixd
-    statix
-    zellij
-    texinfo
-    libffi zlib
-    nodePackages.ungit
-    ventoy
-  ]); 
+# # Core
+# zsh
+# alacritty
+# git
+# ranger
+# syncthing
+# xclip
+# lua
+# lua-language-server
+#
+# # Various dev packages
+# nil
+# nixd
+# statix
+# zellij
+# texinfo
+# libffi zlib
+# nodePackages.ungit
+# ventoy
+]); 
 
   services.syncthing.enable = true;
 

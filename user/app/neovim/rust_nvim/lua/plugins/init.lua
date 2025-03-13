@@ -301,6 +301,11 @@ local default_plugins = {
       return M
     end
   },
+  {
+    'mrcjkb/rustaceanvim',
+    version = '^5', -- Recommended
+    lazy = false, -- This plugin is already lazy
+  },
 }
 
 local config = require("core.utils").load_config()

@@ -22,6 +22,7 @@ let
     tmt = "tma -t";
     ntm = "tm new -s";
     ktm = "tm kill-session -t";
+    cmf = "sudo sh ~/.HomeFlake/user/lang/cmf.sh";
     rr = "ranger";
     nv = "nvim";
     q = "exit";

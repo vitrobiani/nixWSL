@@ -18,17 +18,8 @@ M.general = {
   },
 
   n = {
-    -- ['<F5>'] = { ":lua require'dap'.continue()<CR>" },
-    ['<F6>'] = { ":lua require'dapui'.toggle()<CR>" },
-    ['<F7>'] = { "<cmd> RustDebuggables <CR>" },
-    ['<F10>'] = { ":lua require'dap'.step_over()<CR>" },
-    ['<F11>'] = { ":lua require'dap'.step_into()<CR>" },
-    ['<F12>'] = { ":lua require'dap'.step_out()<CR>" },
-    ['<leader>bp'] = { ":lua require'dap'.toggle_breakpoint()<CR>" , "Toggle breakpoint" },
-    ['<leader>dr'] = { ":lua require'dap'.repl.open()<CR>"},
-
+    ["<leader>e"] = {"<cmd>!chmod +x %<CR>", "Make Exe"},
     ["<leader>rf"] = {"function() vim.lsp.buf.rename() end", "Refactor"},
-    ["<leader>rc"] = {"function() require('crates').upgrade_all_crates() end", "update crates"},
     ['<C-h>'] = { "<cmd> TmuxNavigateLeft <CR>" },
     ['<C-l>'] = { "<cmd> TmuxNavigateRight <CR>" },
     ['<C-j>'] = { "<cmd> TmuxNavigateDown <CR>" },
@@ -46,7 +37,6 @@ M.general = {
 
     -- Copy all
     ["<C-c>"] = { "<cmd> %y+ <CR>", "Copy whole file" },
-    ["<leader>e"] = {"<cmd>!chmod +x %<CR>"},
 
     -- line numbers
     ["<leader>n"] = { "<cmd> set nu! <CR>", "Toggle line number" },

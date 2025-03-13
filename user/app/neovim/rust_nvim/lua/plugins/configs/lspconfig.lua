@@ -64,12 +64,20 @@ require("lspconfig").lua_ls.setup {
   },
 }
 
-require("lspconfig").clangd.setup {
-  on_attach = function()
-    client.server_capabilities.signatureHelpProvider = false
-    on_attach(client, bufnr)
-  end,
+-- require("lspconfig").clangd.setup {
+--   on_attach = function()
+--     client.server_capabilities.signatureHelpProvider = false
+--     on_attach(client, bufnr)
+--   end,
+--   capabilities = M.capabilities,
+-- }
+
+require'lspconfig'.clangd.setup{}
+
+require("lspconfig").pyright.setup{
+  on_attach = M.on_attach,
   capabilities = M.capabilities,
+  filetypes = {"python"},
 }
 
 require("lspconfig").nixd.setup {}
@@ -117,21 +125,5 @@ dap.listeners.before.event_exited["dapui_config"] = function()
     require("dapui").close()
 end
 
--- local lspconfig = require("lspconfig")
--- local util = require "lspconfig/util"
--- require("lspconfig").rust_analyzer.setup {
---   on_init = M.on_init,
---   on_attach = M.on_attach,
---   capabilities = M.capabilities,
---   root_dir = util.root_pattern("Cargo.toml"),
---   filetypes = {"rust"},
---   settings = {
---     ['rust_analyzer']= {
---       cargo = {
---         allFeatures = true,
---       },
---     },
---   },
--- }
 
 return M

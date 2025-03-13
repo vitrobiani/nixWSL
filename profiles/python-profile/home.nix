@@ -26,7 +26,7 @@
   home.enableNixpkgsReleaseCheck = false;
 
   home.packages = (with pkgs; [
-
+  labelImg
   ]); 
 
   services.syncthing.enable = true;

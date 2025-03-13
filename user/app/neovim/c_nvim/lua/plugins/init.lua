@@ -241,14 +241,6 @@ local default_plugins = {
       require("which-key").setup(opts)
     end,
   },
-  --debugger
-  {
-    "rcarriga/nvim-dap-ui",
-    event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
-  },
-  { "mfussenegger/nvim-dap" },
-  { "nvim-neotest/nvim-nio" },
   {
     "christoomey/vim-tmux-navigator",
     cmd = {

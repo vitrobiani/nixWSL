@@ -22,15 +22,6 @@ M.general = {
     ['<C-l>'] = { "<cmd> TmuxNavigateRight <CR>" },
     ['<C-j>'] = { "<cmd> TmuxNavigateDown <CR>" },
     ['<C-k>'] = { "<cmd> TmuxNavigateUp <CR>" },
-
-    ['<F5>'] = { ":lua require'dap'.continue()<CR>" },
-    ['<F6>'] = { ":lua require'dapui'.toggle()<CR>" },
-    ['<F10>'] = { ":lua require'dap'.step_over()<CR>" },
-    ['<F11>'] = { ":lua require'dap'.step_into()<CR>" },
-    ['<F12>'] = { ":lua require'dap'.step_out()<CR>" },
-    ['<leader>bp'] = { ":lua require'dap'.toggle_breakpoint()<CR>" },
-    ['<leader>dr'] = { ":lua require'dap'.repl.open()<CR>" },
-
     ["<Esc>"] = { "<cmd> noh <CR>", "Clear highlights" },
     -- switch between windows
     -- ["<C-h>"] = { "<C-w>h", "Window left" },

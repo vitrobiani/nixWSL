@@ -1,0 +1,17 @@
+#! /bin/sh
+
+SESH="$1"
+
+tmux has-session -t "$SESH" 2> /dev/null
+
+if [ $? != 0 ]; then
+# if ! mycmd; then
+    tmux new-session -d -s "$SESH" -n "editor"
+
+    tmux send-keys -t $SESH:editor "cd ~/rust/idk/" C-m
+    tmux send-keys -t $SESH:editor "nano ." C-m
+
+    tmux new-window -t "$SESH" -n "server"
+    tmux send-keys -t $SESH:server "cd ~/proj/" C-m
+    tmux send-keys -t $SESH:server "nvim ." C-m
+fi
