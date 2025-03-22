@@ -3,8 +3,8 @@
 {
   home.packages = [ pkgs.git ];
   programs.git.enable = true;
-  programs.git.userName = "vitrobiani";
-  programs.git.userEmail = "vitrobiani@gmail.com";
+  programs.git.userName = userSettings.name;
+  programs.git.userEmail = userSettings.email;
   programs.git.extraConfig = {
     init.defaultBranch = "main";
     safe.directory = "/home/" + userSettings.username + "/.dotfiles";

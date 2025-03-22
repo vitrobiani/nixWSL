@@ -7,15 +7,16 @@
       systemSettings = {
         system = "x86_64-linux"; # system arch
         hostname = "nixos"; # hostname
-        profile = "rust-profile"; # profileID
+        profile = "work-profile"; # profileID
         timezone = "Asia/Jerusalem"; # select timezone
         locale = "en_US.UTF-8"; # select locale
+          bootMode = "uefi"; # uefi or bios
       };
 
       # ----- USER SETTINGS ----- #
       userSettings = rec {
         profile = systemSettings.profile;
-        username = "nixos"; # username
+        username = "vitrobiani"; # username
         name = "vitrobiani"; # name/identifier
         email = "vitrobiani@gmail.com"; # email (used for certain configurations)
         dotfilesDir = "~/.HomeFlake/"; # absolute path of the local repo
@@ -24,23 +25,24 @@
         font = "fira-mono"; # Selected font
         fontPkg = pkgs.fira-mono; # Font package
         editor = "nvim"; # Default editor;
+        spawnEditor = "exec " + term + " -e " + editor;
         # editor spawning translator
         # generates a command that can be used to spawn editor inside a gui
         # EDITOR and TERM session variables must be set in home.nix or other module
         # I set the session variable SPAWNEDITOR to this in my home.nix for convenience
-        spawnEditor = if (editor == "emacsclient") then
-                        "emacsclient -c -a 'emacs'"
-                      else
-                        (if ((editor == "vim") ||
-                             (editor == "nvim") ||
-                             (editor == "nano")) then
-                               "exec " + term + " -e " + editor
-                         else
-                           editor);
+   #     spawnEditor = if (editor == "emacsclient") then
+   #                     "emacsclient -c -a 'emacs'"
+   #                   else
+   #                     (if ((editor == "vim") ||
+   #                          (editor == "nvim") ||
+   #                          (editor == "nano")) then
+   #                            "exec " + term + " -e " + editor
+   #                      else
+   #                        editor);
       };
 
       # configure pkgs
-      pkgs = pkgs-stable;
+       pkgs = pkgs-stable;
 
       pkgs-stable = import inputs.nixpkgs-stable {
         system = systemSettings.system;
@@ -69,7 +71,7 @@
 
     in {
       homeConfigurations = {
-        nixos = home-manager.lib.homeManagerConfiguration {
+        vitrobiani = home-manager.lib.homeManagerConfiguration {
           inherit pkgs;
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/home.nix") # load home.nix from selected PROFILE
@@ -88,7 +90,6 @@
           system = systemSettings.system;
           modules = [
             (./. + "/profiles" + ("/" + systemSettings.profile) + "/configuration.nix")
-            #./system/bin/phoenix.nix
           ]; # load configuration.nix from selected PROFILE
           specialArgs = {
             # pass config variables from above
@@ -133,6 +134,12 @@
     home-manager-stable.url = "github:nix-community/home-manager/release-24.11";
     home-manager-stable.inputs.nixpkgs.follows = "nixpkgs-stable";
     webx.url = "github:face-hh/webx";
+
+    hyprland.url = "github:hyprwm/Hyprland";
+    nixos-grub-themes.url = "github:jeslie0/nixos-grub-themes";
+    grub2-themes = {
+      url = "github:vinceliuice/grub2-themes";
+    };
 
     #nix-straight.flake = false;
   };

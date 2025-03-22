@@ -192,6 +192,7 @@ in
     bat eza bottom fd bc
     direnv nix-direnv
     oh-my-zsh tmux
+    ghostty fzf
   ];
 
   programs.direnv.enable = true;

@@ -3,7 +3,8 @@
 {
   # Python packages
   home.packages = with pkgs;[
-    # python3Full
+    manim
+    texliveTeTeX
     imath
     pystring
     pyright
