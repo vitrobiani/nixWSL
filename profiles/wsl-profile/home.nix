@@ -14,6 +14,10 @@
               ../../user/generalSettings/envVars.nix
 
               ../../user/app/neovim/nvim.nix # My neovim config
+              ../../user/app/ranger/ranger.nix
+              ../../user/lang/rust.nix
+              ../../user/lang/cc.nix
+              ../../user/lang/python.nix
             ];
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
@@ -29,6 +33,7 @@
 
   home.sessionVariables = {
     EDITOR = userSettings.editor;
+    VISUAL = userSettings.editor;
     SPAWNEDITOR = userSettings.spawnEditor;
     TERM = userSettings.term;
   };

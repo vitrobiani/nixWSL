@@ -20,7 +20,7 @@
               ../../user/lang/python.nix
 
               ../../system/gnome.nix
-              ../../system/hyprland.nix
+              # ../../system/hyprland.nix
             ];
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
@@ -43,17 +43,6 @@
     libxkbcommon wayland # To use the wayland feature
   ]); 
 
-  home.file ={
-    "Makefiles" = {
-      enable = true;
-      source = ../../user/lang/Makefiles;
-      recursive = true;
-    };
-
-    ".clang-format".text = "
-      BasedOnStyle: LLVM
-      IndentWidth: 4";
-  };
 
   services.syncthing.enable = true;
 

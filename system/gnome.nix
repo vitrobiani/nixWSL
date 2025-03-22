@@ -12,6 +12,8 @@
     gnomeExtensions.window-title-is-back
     gnomeExtensions.lilypad
     gnomeExtensions.hide-top-bar
+    gnomeExtensions.pano
+    gnomeExtensions.unite
     dconf-editor
     gnome-tweaks
   ]); 

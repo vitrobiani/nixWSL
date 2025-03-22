@@ -176,7 +176,7 @@ in
             bind : command-prompt
             bind w choose-window
             bind r command-prompt "rename-window %%"
-            set-option -g status-position top
+            set-option -g status-position bottom
          '';
      };
   };
@@ -192,7 +192,8 @@ in
     bat eza bottom fd bc
     direnv nix-direnv
     oh-my-zsh tmux
-    ghostty fzf
+    ghostty fzf warp-terminal
+    terminal-parrot
   ];
 
   programs.direnv.enable = true;
