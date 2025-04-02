@@ -29,6 +29,8 @@
 
   home.packages = (with pkgs; [
     vscode
+    jetbrains.idea-community-src
+    libreoffice
 
     docker
     hollywood
@@ -36,6 +38,7 @@
     vlc
     spotify
     discord
+
 
     pkg-config
     udev alsa-lib vulkan-loader

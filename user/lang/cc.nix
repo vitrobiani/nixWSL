@@ -13,6 +13,11 @@
     ".clang-format".text = "
       BasedOnStyle: LLVM
       IndentWidth: 4";
+
+    ".clangd".text = "
+    CompileFlags:
+      Add: [-I/home/vitrobiani/.nix-profile/include/mpi.h]
+      ";
   };
 
   home.packages = with pkgs;[
@@ -29,6 +34,7 @@
     mesa
     nemiver
     libgcc
+    mpich
   ];
 
 }

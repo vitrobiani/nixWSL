@@ -36,6 +36,7 @@ let
     fz = "fzf --preview='cat {}'";
     nfz = "nvim $(fz)";
     ks = "~/.HomeFlake/scripts/ks.sh";
+    nd = "nix develop";
   };
 in
 {
@@ -192,7 +193,7 @@ in
     bat eza bottom fd bc
     direnv nix-direnv
     oh-my-zsh tmux
-    ghostty fzf warp-terminal
+    ghostty fzf warp-terminal wezterm
     terminal-parrot
   ];
 
