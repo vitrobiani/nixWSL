@@ -15,7 +15,8 @@
     x11basic
     alsa-lib
     alsa-tools
-xorg.xbitmaps
+    xorg.xbitmaps
+    libxkbcommon
   ];
 
 
