@@ -36,6 +36,7 @@ let
     fz = "fzf --preview='cat {}'";
     nfz = "nvim $(fz)";
     ks = "~/.HomeFlake/scripts/ks.sh";
+    nd = "nix develop";
   };
 in
 {
