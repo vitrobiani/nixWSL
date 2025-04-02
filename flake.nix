@@ -7,7 +7,7 @@
       systemSettings = {
         system = "x86_64-linux"; # system arch
         hostname = "nixos"; # hostname
-        profile = "work-profile"; # profileID
+        profile = "wsl-profile"; # profileID
         timezone = "Asia/Jerusalem"; # select timezone
         locale = "en_US.UTF-8"; # select locale
           bootMode = "uefi"; # uefi or bios
