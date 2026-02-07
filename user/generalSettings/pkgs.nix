@@ -2,7 +2,7 @@
 
 {
   home.packages = (with pkgs; [
-    hello
+    # hello
     spotify-cli-linux
     spotify-player
     # Core
@@ -12,6 +12,8 @@
     ranger
     xclip
     syncthing
+    baobab
+    rembg
 
 
     # Various dev packages
@@ -20,7 +22,6 @@
     texinfo
     libffi zlib
     nodePackages.ungit
-    ventoy
 
     tree-sitter
     nodejs_22
@@ -30,5 +31,9 @@
     bison
     flex
     gnumake42
+
+    bitwarden-desktop
+    wasistlos
+    claude-code
   ]); 
 }

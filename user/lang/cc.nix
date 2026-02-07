@@ -21,12 +21,16 @@
   };
 
   home.packages = with pkgs;[
-    clang-tools
+    # clang-tools
+    # llvmPackages_19.clang-tools
+    llvmPackages_20.clang-tools
+    llvmPackages_19.openmp
+    # ccls
     lldb_18
     vimPlugins.nvim-nio
     cmake-language-server
     gdb
-    gcc
+    # gcc
     cmake
     gnumake42
     valgrind

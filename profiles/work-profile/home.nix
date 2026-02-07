@@ -13,11 +13,16 @@
               ../../user/generalSettings/imports.nix
               ../../user/generalSettings/envVars.nix
 
-              ../../user/app/neovim/rust_nvim.nix # My neovim config
+              ../../user/app/gaming/gaming.nix
+              ../../user/app/neovim/nvim.nix
               ../../user/app/ranger/ranger.nix
               ../../user/lang/rust.nix
               ../../user/lang/cc.nix
+              ../../user/lang/dart.nix
               ../../user/lang/python.nix
+              ../../user/lang/editors.nix
+              ../../user/shell/term.nix
+              ../../user/shell/sh.nix
 
               ../../system/gnome.nix
               # ../../system/hyprland.nix
@@ -28,8 +33,7 @@
   home.enableNixpkgsReleaseCheck = false;
 
   home.packages = (with pkgs; [
-    vscode
-    jetbrains.idea-community-src
+    brave
     libreoffice
 
     docker
@@ -44,6 +48,12 @@
     udev alsa-lib vulkan-loader
     xorg.libX11 xorg.libXcursor xorg.libXi xorg.libXrandr # To use the x11 feature
     libxkbcommon wayland # To use the wayland feature
+
+    # android-tools
+    # android-studio
+    #
+    # dart
+    # flutter
   ]); 
 
 

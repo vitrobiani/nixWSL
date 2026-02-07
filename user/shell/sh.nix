@@ -37,6 +37,8 @@ let
     nfz = "nvim $(fz)";
     ks = "~/.HomeFlake/scripts/ks.sh";
     nd = "nix develop";
+    sncu = "sudo nix-channel --update";
+    snrs = "sudo nixos-rebuild switch && sncu";
   };
 in
 {

@@ -12,12 +12,12 @@
     ruff
     black
 
-    (python3Full.withPackages (p: with p; [
-        pandas
-        pyautogui
-        pygame
-        ply
-    ]))
+    # (python3Full.withPackages (p: with p; [
+    #     pandas
+    #     pyautogui
+    #     pygame
+    #     ply
+    # ]))
 
     # python3Packages.cffi
     # python3Packages.dbus-python

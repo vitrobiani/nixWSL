@@ -72,7 +72,22 @@ require("lspconfig").lua_ls.setup {
 --   capabilities = M.capabilities,
 -- }
 
-require'lspconfig'.clangd.setup{}
+require'lspconfig'.clangd.setup{
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--compile-commands-dir=build",  -- Adjust if your build directory is different
+    "--header-insertion=never",      -- Optional: Adjust based on your preferences
+    "--clang-tidy",
+    "--log=verbose"
+  },
+  init_options = {
+    fallbackFlags = {"-fopenmp"}
+  }
+}
+
+-- require("lspconfig").ccls.setup{}
+
 
 require("lspconfig").pyright.setup{
   on_attach = M.on_attach,
